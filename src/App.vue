@@ -1,28 +1,53 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="container">
+      <Home></Home>
+    </div>
+    <Bottom></Bottom>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Bottom from "./components/Bottom";
+import Home from "./components/home/Home";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  components: { Bottom, Home },
+  mounted: function () {
+    let foot = document.getElementById("foot");
+    let app = document.getElementById("app");
+    foot.style.width = window.getComputedStyle(app).width;
+    window.onresize = () => {
+      foot.style.width = window.getComputedStyle(app).width;
+    };
+  },
+};
 </script>
 
 <style>
+* {
+  margin: 0px;
+  padding: 0px;
+}
+html,
+body {
+  height: 100%;
+}
+.head {
+  min-height: 98px;
+}
+.foot {
+  min-height: 57px;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  height: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  min-width: 300px;
+}
+.container {
+  height: 100%;
 }
 </style>
