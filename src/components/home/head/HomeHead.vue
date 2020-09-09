@@ -84,10 +84,6 @@ export default {
   height: 100%;
   border-radius: 50%;
 }
-.icon-small-x {
-  width: 17px;
-  height: 17px;
-}
 .profile .search-box {
   width: 55%;
   height: 30px;
@@ -99,15 +95,5 @@ export default {
 }
 .profile .search-box .icon-small-x {
   margin-left: 5px;
-}
-.icon-small-x img {
-  width: 100%;
-}
-.icon-small {
-  width: 25px;
-  height: 25px;
-}
-.icon-small img {
-  width: 100%;
 }
 </style>

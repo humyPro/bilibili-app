@@ -3,16 +3,16 @@
     <div class="container">
       <Home></Home>
     </div>
-    <Bottom></Bottom>
+    <Tabbar></Tabbar>
   </div>
 </template>
 
 <script>
-import Bottom from "./components/Bottom";
+import Tabbar from "./components/tabbar/Tabbar";
 import Home from "./components/home/Home";
 export default {
   name: "App",
-  components: { Bottom, Home },
+  components: { Tabbar, Home },
   mounted: function () {
     let foot = document.getElementById("foot");
     let app = document.getElementById("app");
