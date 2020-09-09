@@ -13,3 +13,25 @@
 .icon-small img {
   width: 100%;
 }
+
+.flex-end{
+  justify-content: flex-end;
+  align-items: center;
+}
+.flex-around{
+  justify-content: space-around;
+  align-items: center;
+}
+.circular{
+  border-radius: 50%;
+}
+img {
+  width: inherit;
+  height: inherit;
+}
+.wrapper {
+  display: flex;
+}
+.flex-column{
+  flex-direction: column;
+}

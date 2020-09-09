@@ -21,135 +21,135 @@
 <script>
 export default {
   methods: {
-    getVideos: function () {
+    getVideos: function() {
       let videos = [
         {
-          img: require("../../../assets/videoImg/1.jpg"),
+          img: require("@/assets/videoImg/1.jpg"),
           title: "[大事件]2020年10月10日上海国家会展中心",
           tags: ["bilibili"],
-          type: "",
+          type: ""
         },
         {
-          img: require("../../../assets/videoImg/2.jpg"),
+          img: require("@/assets/videoImg/2.jpg"),
           title: "2233娘的可爱日常",
           tags: ["2233", "可爱"],
-          type: "",
+          type: ""
         },
         {
-          img: require("../../../assets/videoImg/3.jpg"),
+          img: require("@/assets/videoImg/3.jpg"),
           title: "bilibili[]~(￣▽￣)~*",
           tags: ["日常"],
-          type: "",
+          type: ""
         },
         {
-          img: require("../../../assets/videoImg/4.jpg"),
+          img: require("@/assets/videoImg/4.jpg"),
           title: "在缺水的沙漠里面上完厕所冲还是不冲呢？",
           tags: ["搞笑", "脑洞"],
-          type: "",
+          type: ""
         },
         {
-          img: require("../../../assets/videoImg/1.jpg"),
+          img: require("@/assets/videoImg/1.jpg"),
           title: "【大事件】2020年10月10日上海国家会展中心",
           tags: ["bilibili"],
-          type: "",
+          type: ""
         },
         {
-          img: require("../../../assets/videoImg/2.jpg"),
+          img: require("@/assets/videoImg/2.jpg"),
           title: "2233娘的可爱日常",
           tags: ["2233", "可爱"],
-          type: "",
+          type: ""
         },
         {
-          img: require("../../../assets/videoImg/3.jpg"),
+          img: require("@/assets/videoImg/3.jpg"),
           title: "bilibili[]~(￣▽￣)~*",
           tags: ["日常"],
-          type: "",
+          type: ""
         },
         {
-          img: require("../../../assets/videoImg/4.jpg"),
+          img: require("@/assets/videoImg/4.jpg"),
           title: "在缺水的沙漠里面上完厕所冲还是不冲呢？",
           tags: ["搞笑", "脑洞"],
-          type: "",
+          type: ""
         },
         {
-          img: require("../../../assets/videoImg/1.jpg"),
+          img: require("@/assets/videoImg/1.jpg"),
           title: "【大事件】2020年10月10日上海国家会展中心",
           tags: ["bilibili"],
-          type: "",
+          type: ""
         },
         {
-          img: require("../../../assets/videoImg/2.jpg"),
+          img: require("@/assets/videoImg/2.jpg"),
           title: "2233娘的可爱日常",
           tags: ["2233", "可爱"],
-          type: "",
+          type: ""
         },
         {
-          img: require("../../../assets/videoImg/3.jpg"),
+          img: require("@/assets/videoImg/3.jpg"),
           title: "bilibili[]~(￣▽￣)~*",
           tags: ["日常"],
-          type: "",
+          type: ""
         },
         {
-          img: require("../../../assets/videoImg/4.jpg"),
+          img: require("@/assets/videoImg/4.jpg"),
           title: "在缺水的沙漠里面上完厕所冲还是不冲呢？",
           tags: ["搞笑", "脑洞"],
-          type: "",
+          type: ""
         },
         {
-          img: require("../../../assets/videoImg/1.jpg"),
+          img: require("@/assets/videoImg/1.jpg"),
           title: "【大事件】2020年10月10日上海国家会展中心",
           tags: ["bilibili"],
-          type: "",
+          type: ""
         },
         {
-          img: require("../../../assets/videoImg/2.jpg"),
+          img: require("@/assets/videoImg/2.jpg"),
           title: "2233娘的可爱日常",
           tags: ["2233", "可爱"],
-          type: "",
+          type: ""
         },
         {
-          img: require("../../../assets/videoImg/3.jpg"),
+          img: require("@/assets/videoImg/3.jpg"),
           title: "bilibili[]~(￣▽￣)~*",
           tags: ["日常"],
-          type: "",
+          type: ""
         },
         {
-          img: require("../../../assets/videoImg/4.jpg"),
+          img: require("@/assets/videoImg/4.jpg"),
           title: "在缺水的沙漠里面上完厕所冲还是不冲呢？",
           tags: ["搞笑", "脑洞"],
-          type: "",
+          type: ""
         },
         {
-          img: require("../../../assets/videoImg/1.jpg"),
+          img: require("@/assets/videoImg/1.jpg"),
           title: "【大事件】2020年10月10日上海国家会展中心",
           tags: ["bilibili"],
-          type: "",
+          type: ""
         },
         {
-          img: require("../../../assets/videoImg/2.jpg"),
+          img: require("@/assets/videoImg/2.jpg"),
           title: "2233娘的可爱日常",
           tags: ["2233", "可爱"],
-          type: "",
+          type: ""
         },
         {
-          img: require("../../../assets/videoImg/3.jpg"),
+          img: require("@/assets/videoImg/3.jpg"),
           title: "bilibili[]~(￣▽￣)~*",
           tags: ["日常"],
-          type: "",
+          type: ""
         },
         {
-          img: require("../../../assets/videoImg/4.jpg"),
+          img: require("@/assets/videoImg/4.jpg"),
           title: "在缺水的沙漠里面上完厕所冲还是不冲呢？",
           tags: ["搞笑", "脑洞"],
-          type: "",
-        },
+          type: ""
+        }
       ];
       for (let i = 0; i < videos.length; i++) {
         videos[i].id = i;
       }
       return videos;
-    },
-  },
+    }
+  }
 };
 </script>
 

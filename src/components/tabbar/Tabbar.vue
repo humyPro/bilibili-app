@@ -1,37 +1,44 @@
 <template>
   <div id="foot" class="foot">
-    <Tab v-for="item in getTabs()" :key="item.name" :imgUrl="item.imgUrl" :name="item.name"/>
+    <router-link v-for="item in getTabs()" :key="item.name" :to="item.router">
+      <Tab :imgUrl="item.imgUrl" :name="item.name" />
+    </router-link>
   </div>
 </template>
 
 <script>
-import Tab from "./Tab"
+import Tab from "./Tab";
 export default {
-  components:{Tab},
-  methods:{
-    getTabs:function(){
+  components: { Tab },
+  methods: {
+    getTabs: function() {
       return [
         {
-          imgUrl:require("../../assets/icon/home.svg"),
-          name:"主页"
+          imgUrl: require("../../assets/icon/home.svg"),
+          name: "主页",
+          router: "/home"
         },
         {
-          imgUrl:require("../../assets/icon/channel.svg"),
-          name:"频道"
+          imgUrl: require("../../assets/icon/channel.svg"),
+          name: "频道",
+          router: "/home"
         },
         {
-          imgUrl:require("../../assets/icon/news.svg"),
-          name:"动态"
+          imgUrl: require("../../assets/icon/news.svg"),
+          name: "动态",
+          router: "/home"
         },
         {
-          imgUrl:require("../../assets/icon/shopping.svg"),
-          name:"会员购"
+          imgUrl: require("../../assets/icon/shopping.svg"),
+          name: "会员购",
+          router: "/home"
         },
         {
-          imgUrl:require("../../assets/icon/bilibili-line.svg"),
-          name:"我的"
+          imgUrl: require("../../assets/icon/bilibili-line.svg"),
+          name: "我的",
+          router: "/mine"
         }
-      ]
+      ];
     }
   }
 };
@@ -50,8 +57,17 @@ export default {
   display: flex;
   font-size: 70%;
   color: #707070;
+  justify-content: space-around;
 }
-.foot .foot-tab {
+.foot a {
+  text-decoration: none;
+  color: #707070;
+}
+
+.foot .router-link-active {
+  text-decoration: none;
+}
+.foot-tab {
   flex-basis: 20%;
   text-align: center;
   display: flex;

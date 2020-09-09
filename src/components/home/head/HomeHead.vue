@@ -6,14 +6,14 @@
       </div>
       <div class="head-item search-box">
         <div class="icon-small-x">
-          <img src="../../../assets/icon/search.svg" />
+          <img src="@/assets/icon/search.svg" />
         </div>
       </div>
       <div class="head-item game-btn icon-small">
-        <img src="../../../assets/icon/game.svg" />
+        <img src="@/assets/icon/game.svg" />
       </div>
       <div class="head-item message-btn icon-small">
-        <img src="../../../assets/icon/message.svg" />
+        <img src="@/assets/icon/message.svg" />
       </div>
     </div>
     <div class="catagory">
@@ -34,17 +34,17 @@
 export default {
   name: "tophead",
   methods: {
-    getProfilePhoto: function () {
-      return require("../../../assets/videoImg/head.jpg");
-    },
-  },
+    getProfilePhoto: function() {
+      return require("@/assets/videoImg/head.jpg");
+    }
+  }
 };
 </script>
 
 <style>
 .head {
   height: 12%;
-  background-color: rgb(212, 92, 142);
+  background-color: var(--bilibili-color);
   display: flex;
   flex-direction: column;
 }

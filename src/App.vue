@@ -1,26 +1,26 @@
 <template>
   <div id="app">
     <div class="container">
-      <Home></Home>
+      <!-- <Home></Home> -->
+      <router-view></router-view>
     </div>
     <Tabbar></Tabbar>
   </div>
 </template>
 
 <script>
-import Tabbar from "./components/tabbar/Tabbar";
-import Home from "./components/home/Home";
+import Tabbar from "@/components/tabbar/Tabbar";
 export default {
   name: "App",
-  components: { Tabbar, Home },
-  mounted: function () {
+  components: { Tabbar },
+  mounted: function() {
     let foot = document.getElementById("foot");
     let app = document.getElementById("app");
     foot.style.width = window.getComputedStyle(app).width;
     window.onresize = () => {
       foot.style.width = window.getComputedStyle(app).width;
     };
-  },
+  }
 };
 </script>
 
