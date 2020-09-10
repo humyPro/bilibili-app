@@ -4,7 +4,7 @@
       <!-- <Home></Home> -->
       <router-view></router-view>
     </div>
-    <Tabbar></Tabbar>
+    <Tabbar v-if="showTabbar"></Tabbar>
   </div>
 </template>
 
@@ -12,15 +12,25 @@
 import Tabbar from "@/components/tabbar/Tabbar";
 export default {
   name: "App",
+  data: function () {
+    return {
+      showTabbar: true,
+    };
+  },
   components: { Tabbar },
-  mounted: function() {
+  watch: {
+    $route(e) {
+      this.showTabbar = e.meta.showTabbar === true;
+    },
+  },
+  mounted: function () {
     let foot = document.getElementById("foot");
     let app = document.getElementById("app");
     foot.style.width = window.getComputedStyle(app).width;
     window.onresize = () => {
       foot.style.width = window.getComputedStyle(app).width;
     };
-  }
+  },
 };
 </script>
 

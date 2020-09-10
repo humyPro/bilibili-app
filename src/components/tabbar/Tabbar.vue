@@ -1,6 +1,6 @@
 <template>
   <div id="foot" class="foot">
-    <router-link v-for="item in getTabs()" :key="item.name" :to="item.router">
+    <router-link v-for="item in getTabs()" :key="item.name" :to="item.router" tag="div">
       <Tab :imgUrl="item.imgUrl" :name="item.name" />
     </router-link>
   </div>
@@ -58,10 +58,6 @@ export default {
   font-size: 70%;
   color: #707070;
   justify-content: space-around;
-}
-.foot a {
-  text-decoration: none;
-  color: #707070;
 }
 
 .foot .router-link-active {

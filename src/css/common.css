@@ -1,27 +1,18 @@
+
 .icon-small-x {
   width: 17px;
   height: 17px;
 }
 
-.icon-small-x img {
-  width: 100%;
+.icon{
+  width:50px;
+  height:50px
 }
 .icon-small {
   width: 25px;
   height: 25px;
 }
-.icon-small img {
-  width: 100%;
-}
 
-.flex-end{
-  justify-content: flex-end;
-  align-items: center;
-}
-.flex-around{
-  justify-content: space-around;
-  align-items: center;
-}
 .circular{
   border-radius: 50%;
 }
@@ -31,6 +22,10 @@ img {
 }
 .wrapper {
   display: flex;
+}
+.flex-center{
+  justify-content: center;
+  align-items: center;
 }
 .flex-column{
   flex-direction: column;
