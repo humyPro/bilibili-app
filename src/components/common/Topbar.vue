@@ -1,6 +1,6 @@
 <template>
   <div class="topbar">
-    <div class="icon-small">
+    <div class="icon-small" @click="back">
       <img src="@/assets/icon/left.svg" />
     </div>
     <div>{{title}}</div>
@@ -12,12 +12,17 @@
 export default {
   props: {
     title: {
-      type: String,
+      type: String
     },
     other: {
-      type: String,
-    },
+      type: String
+    }
   },
+  methods: {
+    back: function() {
+      this.$router.back();
+    }
+  }
 };
 </script>
 

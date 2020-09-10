@@ -1,7 +1,7 @@
 <template>
   <div id="foot" class="foot">
     <router-link v-for="item in getTabs()" :key="item.name" :to="item.router" tag="div">
-      <Tab :imgUrl="item.imgUrl" :name="item.name" />
+      <Tab :imgUrl="item.imgUrl" :name="item.name" :path="item.router" />
     </router-link>
   </div>
 </template>

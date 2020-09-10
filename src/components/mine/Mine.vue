@@ -51,18 +51,18 @@
 </template>
 
 <script>
-import constant from "@/constant"
+import constant from "@/constant";
 export default {
   methods: {
-    loginPage: function () {
+    loginPage: function() {
       this.$router.push(constant.path.loginPath);
-    },
+    }
   },
   computed: {
-    headPhoto: function () {
+    headPhoto: function() {
       return require("../../assets/videoImg/head.jpg");
-    },
-  },
+    }
+  }
 };
 </script>
 

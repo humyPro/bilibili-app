@@ -11,14 +11,22 @@
 export default {
   props: {
     imgUrl: String,
-    isActive: {
-      type: Boolean,
-      default: false,
-    },
     name: String,
+    path: String
   },
+  data: function() {
+    return { isActive: false };
+  },
+  watch: {
+    $route(e) {
+      this.isActive = e.path === this.path;
+    }
+  }
 };
 </script>
 
 <style>
+.active {
+  color: var(--bilibili-color);
+}
 </style>
