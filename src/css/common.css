@@ -30,3 +30,19 @@ img {
 .flex-column{
   flex-direction: column;
 }
+.masking{
+  position:fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background-color: rgb(0, 0, 0, 0.3);
+}
+.selectdisable{
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
