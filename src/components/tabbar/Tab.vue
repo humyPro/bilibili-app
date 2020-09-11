@@ -25,7 +25,7 @@ export default {
 };
 </script>
 
-<style>
+<style scope>
 .active {
   color: var(--bilibili-color);
 }

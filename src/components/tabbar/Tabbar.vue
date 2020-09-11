@@ -44,7 +44,7 @@ export default {
 };
 </script>
 
-<style>
+<style scope>
 .foot {
   height: 7%;
   background-color: white;

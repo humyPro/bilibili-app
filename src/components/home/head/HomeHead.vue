@@ -41,7 +41,7 @@ export default {
 };
 </script>
 
-<style>
+<style scope>
 .head {
   height: 12%;
   background-color: var(--bilibili-color);

@@ -6,7 +6,7 @@
       :style="{ 'backgroundImage': 'url(' + getBanner()+ ')','background-repeat':'no-repeat','background-size':'cover' }"
     ></div>
     <form class="form">
-      <div class="line" @click="selectLocationForm">
+      <div class="line border-b" @click="selectLocationForm">
         <div>{{selectLocationObj.label}}</div>
         <div class="icon-small">
           <img src="@/assets/icon/right-707070.svg" />
@@ -35,27 +35,24 @@
       <div class="line phone">
         <div class="left">{{selectLocationObj.arecode}}</div>
         <div class="input">
-          <input
-            v-model="phoneNumber"
-            placeholder="请输入手机号码"
-            required
-            maxlength="13"
-          />
+          <input v-model="phoneNumber" placeholder="请输入手机号码" required maxlength="13" />
           <div class="clearbtn icon-small-x" @click="clearPhone">
             <img src="@/assets/icon/cancle.svg" />
           </div>
         </div>
         <div class="btn right">获取验证码</div>
       </div>
-      <div class="line verifi">
+      <div class="spliter-x"></div>
+      <div class="line verifi border-b">
         <div class="left">验证码</div>
         <div class="input">
-          <input placeholder="请输入验证码" required/>
-          <div class="clearbtn icon-small-x" @click="clearPhone">
+          <input v-model="arecode" placeholder="请输入验证码" required />
+          <div class="clearbtn icon-small-x" @click="clearArecode">
             <img src="@/assets/icon/cancle.svg" />
           </div>
         </div>
       </div>
+      <div class="btn-large" :class="{disable:canSubmit}">验证登陆</div>
     </form>
   </div>
 </template>
@@ -64,19 +61,23 @@
 import Topbar from "@/components/common/Topbar";
 export default {
   components: {
-    Topbar,
+    Topbar
   },
-  data: function () {
+  data: function() {
     return {
       showSelectLocationForm: false,
       location: "china",
       showTopBorder: false,
       phoneNumber: "",
+      arecode: ""
     };
   },
   methods: {
     clearPhone() {
       this.phoneNumber = "";
+    },
+    clearArecode() {
+      this.arecode = "";
     },
     getBanner() {
       return require("@/assets/img/login-background.png");
@@ -88,22 +89,22 @@ export default {
           label: "中国大陆",
           arecode: "+86",
           regex: "[0-9]{13}",
-          value: "china",
+          value: "china"
         },
         {
           id: 2,
           label: "美国",
           arecode: "+116",
           regex: "[0-9]{13}",
-          value: "us",
+          value: "us"
         },
         {
           id: 3,
           label: "英国",
           arecode: "+113",
           regex: "[0-9]{13}",
-          value: "uk",
-        },
+          value: "uk"
+        }
       ];
     },
     selectLocationForm() {
@@ -112,12 +113,15 @@ export default {
     selectLocation(e) {
       this.location = e.target.value;
       this.selectLocationForm();
-    },
+    }
   },
   computed: {
     selectLocationObj() {
-      return this.getLocation().find((e) => e.value === this.location);
+      return this.getLocation().find(e => e.value === this.location);
     },
+    canSubmit() {
+      return !this.arecode || !this.phoneNumber;
+    }
   },
   watch: {
     showSelectLocationForm() {
@@ -131,12 +135,12 @@ export default {
           };
         }
       });
-    },
-  },
+    }
+  }
 };
 </script>
 
-<style>
+<style scope>
 .banner {
   height: 100px;
   width: 100%;
@@ -149,7 +153,8 @@ export default {
   display: flex;
   padding: 2% 4%;
   align-items: center;
-  height: 40px;
+  height: 30px;
+  /* border-bottom: 1px solid rgb(216, 210, 210); */
 }
 .locationForm {
   height: 100vh;
@@ -241,5 +246,18 @@ export default {
 }
 .verifi .input {
   flex: 8;
+}
+.spliter-x {
+  margin-left: 5%;
+}
+.btn-large {
+  width: 94%;
+  height: 50px;
+  background-color: var(--bilibili-color);
+  margin: 3%;
+  border-radius: 3px;
+  line-height: 50px;
+  text-align: center;
+  color: white;
 }
 </style>

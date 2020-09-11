@@ -153,7 +153,7 @@ export default {
 };
 </script>
 
-<style>
+<style scope>
 .body {
   height: 88%;
 }

@@ -46,3 +46,21 @@ img {
   -ms-user-select: none;
   user-select: none;
 }
+.spliter-x {
+  width: 100%;
+  background-color: rgb(235, 235, 235);
+  height: 1px;
+  margin: auto;
+}
+
+.spliter {
+  background-color: rgb(235, 235, 235);
+  height: 20px;
+  width: 0.5px;
+}
+.border-b{
+  border-bottom: 1px solid rgb(235, 235, 235);
+}
+.disable{
+  opacity: 0.5;
+}

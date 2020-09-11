@@ -26,7 +26,7 @@ export default {
 };
 </script>
 
-<style>
+<style scope>
 .topbar {
   display: flex;
   justify-content: space-around;

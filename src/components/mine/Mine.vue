@@ -66,7 +66,7 @@ export default {
 };
 </script>
 
-<style>
+<style scope>
 .mine {
   height: 100%;
   display: flex;
@@ -113,11 +113,6 @@ export default {
 .row-text {
   justify-content: space-around;
   align-items: flex-start;
-}
-.spliter {
-  background-color: rgb(192, 186, 186);
-  height: 20px;
-  width: 0.5px;
 }
 .fans {
   margin: 10px 0;
