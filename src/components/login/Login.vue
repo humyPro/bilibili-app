@@ -61,15 +61,15 @@
 import Topbar from "@/components/common/Topbar";
 export default {
   components: {
-    Topbar
+    Topbar,
   },
-  data: function() {
+  data: function () {
     return {
       showSelectLocationForm: false,
       location: "china",
       showTopBorder: false,
       phoneNumber: "",
-      arecode: ""
+      arecode: "",
     };
   },
   methods: {
@@ -89,22 +89,127 @@ export default {
           label: "中国大陆",
           arecode: "+86",
           regex: "[0-9]{13}",
-          value: "china"
+          value: "china",
         },
         {
           id: 2,
           label: "美国",
           arecode: "+116",
           regex: "[0-9]{13}",
-          value: "us"
+          value: "us",
         },
         {
           id: 3,
           label: "英国",
           arecode: "+113",
           regex: "[0-9]{13}",
-          value: "uk"
-        }
+          value: "uk",
+        },
+        {
+          id: 1,
+          label: "中国大陆",
+          arecode: "+86",
+          regex: "[0-9]{13}",
+          value: "china",
+        },
+        {
+          id: 2,
+          label: "美国",
+          arecode: "+116",
+          regex: "[0-9]{13}",
+          value: "us",
+        },
+        {
+          id: 3,
+          label: "英国",
+          arecode: "+113",
+          regex: "[0-9]{13}",
+          value: "uk",
+        },
+        {
+          id: 1,
+          label: "中国大陆",
+          arecode: "+86",
+          regex: "[0-9]{13}",
+          value: "china",
+        },
+        {
+          id: 2,
+          label: "美国",
+          arecode: "+116",
+          regex: "[0-9]{13}",
+          value: "us",
+        },
+        {
+          id: 3,
+          label: "英国",
+          arecode: "+113",
+          regex: "[0-9]{13}",
+          value: "uk",
+        },
+        {
+          id: 1,
+          label: "中国大陆",
+          arecode: "+86",
+          regex: "[0-9]{13}",
+          value: "china",
+        },
+        {
+          id: 2,
+          label: "美国",
+          arecode: "+116",
+          regex: "[0-9]{13}",
+          value: "us",
+        },
+        {
+          id: 3,
+          label: "英国",
+          arecode: "+113",
+          regex: "[0-9]{13}",
+          value: "uk",
+        },
+        {
+          id: 1,
+          label: "中国大陆",
+          arecode: "+86",
+          regex: "[0-9]{13}",
+          value: "china",
+        },
+        {
+          id: 2,
+          label: "美国",
+          arecode: "+116",
+          regex: "[0-9]{13}",
+          value: "us",
+        },
+        {
+          id: 3,
+          label: "英国",
+          arecode: "+113",
+          regex: "[0-9]{13}",
+          value: "uk",
+        },
+        {
+          id: 1,
+          label: "中国大陆",
+          arecode: "+86",
+          regex: "[0-9]{13}",
+          value: "china",
+        },
+        {
+          id: 2,
+          label: "美国",
+          arecode: "+116",
+          regex: "[0-9]{13}",
+          value: "us",
+        },
+        {
+          id: 3,
+          label: "英国",
+          arecode: "+113",
+          regex: "[0-9]{13}",
+          value: "uk",
+        },
       ];
     },
     selectLocationForm() {
@@ -113,15 +218,15 @@ export default {
     selectLocation(e) {
       this.location = e.target.value;
       this.selectLocationForm();
-    }
+    },
   },
   computed: {
     selectLocationObj() {
-      return this.getLocation().find(e => e.value === this.location);
+      return this.getLocation().find((e) => e.value === this.location);
     },
     canSubmit() {
       return !this.arecode || !this.phoneNumber;
-    }
+    },
   },
   watch: {
     showSelectLocationForm() {
@@ -135,15 +240,15 @@ export default {
           };
         }
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style scope>
 .banner {
   height: 100px;
-  width: 100%;
+  width: auto;
 }
 .form {
   display: flex;
@@ -157,7 +262,8 @@ export default {
   /* border-bottom: 1px solid rgb(216, 210, 210); */
 }
 .locationForm {
-  height: 100vh;
+  width: auto;
+  height: 100%;
   margin: 10px;
   background-color: white;
   display: flex;
@@ -259,5 +365,9 @@ export default {
   line-height: 50px;
   text-align: center;
   color: white;
+}
+
+.btn-large.disable {
+  background-color: rgba(var(--bilibili-color-value), 0.5);
 }
 </style>

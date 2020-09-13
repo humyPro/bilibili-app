@@ -37,6 +37,7 @@ img {
   right: 0px;
   bottom: 0px;
   background-color: rgb(0, 0, 0, 0.3);
+  width: 100vw;
 }
 .selectdisable{
   -webkit-touch-callout: none;
@@ -60,7 +61,4 @@ img {
 }
 .border-b{
   border-bottom: 1px solid rgb(235, 235, 235);
-}
-.disable{
-  opacity: 0.5;
 }
