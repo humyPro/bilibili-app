@@ -6,7 +6,7 @@
       :style="{ 'backgroundImage': 'url(' + getBanner()+ ')','background-repeat':'no-repeat','background-size':'cover' }"
     ></div>
     <form class="form">
-      <div class="line border-b" @click="selectLocationForm">
+      <div class="line border-b location" @click="selectLocationForm">
         <div>{{selectLocationObj.label}}</div>
         <div class="icon-small">
           <img src="@/assets/icon/right-707070.svg" />
@@ -35,8 +35,14 @@
       <div class="line phone">
         <div class="left">{{selectLocationObj.arecode}}</div>
         <div class="input">
-          <input v-model="phoneNumber" placeholder="请输入手机号码" required maxlength="13" />
-          <div class="clearbtn icon-small-x" @click="clearPhone">
+          <input
+            v-model="phoneNumber"
+            placeholder="请输入手机号码"
+            required
+            maxlength="13"
+            oninput="value=value.replace(/[^\d]/g,'')"
+          />
+          <div class="clearbtn icon-small-xx" @click="clearPhone">
             <img src="@/assets/icon/cancle.svg" />
           </div>
         </div>
@@ -46,14 +52,33 @@
       <div class="line verifi border-b">
         <div class="left">验证码</div>
         <div class="input">
-          <input v-model="arecode" placeholder="请输入验证码" required />
-          <div class="clearbtn icon-small-x" @click="clearArecode">
+          <input
+            v-model="arecode"
+            placeholder="请输入验证码"
+            required
+            oninput="value=value.replace(/[^\w]/g,'')"
+          />
+          <div class="clearbtn icon-small-xx" @click="clearArecode">
             <img src="@/assets/icon/cancle.svg" />
           </div>
         </div>
       </div>
-      <div class="btn-large" :class="{disable:canSubmit}">验证登陆</div>
+      <div class="btn-large" :class="{disable:canSubmit}">验证登录</div>
     </form>
+    <div class="text-banner">
+      <p>未注册或未绑定哔哩哔哩的手机号，将帮你注册新账号</p>
+      <p>
+        登录即代表你同意
+        <span>用户协议</span>和
+        <span>隐私政策</span>
+      </p>
+    </div>
+    <div class="text-banner">
+      <p>
+        遇到问题？
+        <span>查看帮助</span>
+      </p>
+    </div>
   </div>
 </template>
 
@@ -153,8 +178,11 @@ export default {
   display: flex;
   padding: 2% 4%;
   align-items: center;
-  height: 30px;
+  height: 40px;
   /* border-bottom: 1px solid rgb(216, 210, 210); */
+}
+.location.line {
+  justify-content: space-between;
 }
 .locationForm {
   height: 100vh;
@@ -259,5 +287,15 @@ export default {
   line-height: 50px;
   text-align: center;
   color: white;
+}
+.text-banner {
+  color: rgb(146, 148, 150);
+  text-align: center;
+  margin: 3%;
+  font-size: 0.8em;
+}
+.text-banner span {
+  color: var(--bilibili-color);
+  margin-left: -2px;
 }
 </style>
