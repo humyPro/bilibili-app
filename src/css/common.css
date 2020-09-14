@@ -53,6 +53,11 @@ img {
   height: 1px;
   margin: auto;
 }
+.spliter-y{
+  height: 2em;
+  width: 1px;
+  background-color: rgb(235, 235, 235);
+}
 
 .spliter {
   background-color: rgb(235, 235, 235);

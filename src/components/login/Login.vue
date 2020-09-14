@@ -6,7 +6,7 @@
       :style="{ 'backgroundImage': 'url(' + getBanner()+ ')','background-repeat':'no-repeat','background-size':'cover' }"
     ></div>
     <form class="form">
-      <div class="line border-b" @click="selectLocationForm">
+      <div class="line border-b select-location" @click="selectLocationForm">
         <div>{{selectLocationObj.label}}</div>
         <div class="icon-small">
           <img src="@/assets/icon/right-707070.svg" />
@@ -39,6 +39,7 @@
           <div class="clearbtn icon-small-x" @click="clearPhone">
             <img src="@/assets/icon/cancle.svg" />
           </div>
+          <div class="spliter-y"></div>
         </div>
         <div class="btn right">获取验证码</div>
       </div>
@@ -260,6 +261,9 @@ export default {
   align-items: center;
   height: 30px;
   /* border-bottom: 1px solid rgb(216, 210, 210); */
+}
+.select-location{
+  justify-content: space-between;
 }
 .locationForm {
   width: auto;
