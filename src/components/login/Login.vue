@@ -41,7 +41,7 @@
           </div>
           <div class="spliter-y"></div>
         </div>
-        <div class="btn right">获取验证码</div>
+        <div class="btn right vaeifi-code-btn" @click="verification">获取验证码</div>
       </div>
       <div class="spliter-x"></div>
       <div class="line verifi border-b">
@@ -55,11 +55,13 @@
       </div>
       <div class="btn-large" :class="{disable:canSubmit}">验证登陆</div>
     </form>
+    <div>{{res}}</div>
   </div>
 </template>
 
 <script>
 import Topbar from "@/components/common/Topbar";
+import api from "@/api";
 export default {
   components: {
     Topbar,
@@ -71,6 +73,7 @@ export default {
       showTopBorder: false,
       phoneNumber: "",
       arecode: "",
+      res: "waitting",
     };
   },
   methods: {
@@ -220,6 +223,18 @@ export default {
       this.location = e.target.value;
       this.selectLocationForm();
     },
+    verification() {
+      this.res = "click";
+      let x = api.user
+        .captcha()
+        .then(() => {
+          this.res = "asdasdasd";
+        })
+        .catch((r) => {
+          this.res = r.message;
+        });
+      console.log(x);
+    },
   },
   computed: {
     selectLocationObj() {
@@ -262,7 +277,7 @@ export default {
   height: 30px;
   /* border-bottom: 1px solid rgb(216, 210, 210); */
 }
-.select-location{
+.select-location {
   justify-content: space-between;
 }
 .locationForm {
@@ -341,12 +356,16 @@ export default {
   align-items: center;
   justify-self: start;
 }
+.input .spliter-y {
+  margin-left: 4px;
+}
 .phone .left {
   flex: 2;
 }
 .phone .right {
   flex: 3;
   text-align: end;
+  color: var(--bilibili-color);
 }
 .phone .input {
   flex: 5;
