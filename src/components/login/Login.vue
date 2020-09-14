@@ -45,8 +45,9 @@
           <div class="clearbtn icon-small-xx" @click="clearPhone">
             <img src="@/assets/icon/cancle.svg" />
           </div>
+          <div class="spliter-y"></div>
         </div>
-        <div class="btn right">获取验证码</div>
+        <div class="btn right vaeifi-code-btn" @click="verification">获取验证码</div>
       </div>
       <div class="spliter-x"></div>
       <div class="line verifi border-b">
@@ -64,7 +65,7 @@
         </div>
       </div>
       <div class="btn-large" :class="{disable:canSubmit}">验证登录</div>
-    </form>
+    </form><<<<<<< HEAD
     <div class="text-banner">
       <p>未注册或未绑定哔哩哔哩的手机号，将帮你注册新账号</p>
       <p>
@@ -78,23 +79,26 @@
         遇到问题？
         <span>查看帮助</span>
       </p>
-    </div>
+    </div>=======
+    <div>{{res}}</div>>>>>>>> a317a37af76b1e1a737127eadf4c0ad5e7884ef6
   </div>
 </template>
 
 <script>
 import Topbar from "@/components/common/Topbar";
+import api from "@/api";
 export default {
   components: {
-    Topbar
+    Topbar,
   },
-  data: function() {
+  data: function () {
     return {
       showSelectLocationForm: false,
       location: "china",
       showTopBorder: false,
       phoneNumber: "",
-      arecode: ""
+      arecode: "",
+      res: "waitting",
     };
   },
   methods: {
@@ -114,22 +118,127 @@ export default {
           label: "中国大陆",
           arecode: "+86",
           regex: "[0-9]{13}",
-          value: "china"
+          value: "china",
         },
         {
           id: 2,
           label: "美国",
           arecode: "+116",
           regex: "[0-9]{13}",
-          value: "us"
+          value: "us",
         },
         {
           id: 3,
           label: "英国",
           arecode: "+113",
           regex: "[0-9]{13}",
-          value: "uk"
-        }
+          value: "uk",
+        },
+        {
+          id: 1,
+          label: "中国大陆",
+          arecode: "+86",
+          regex: "[0-9]{13}",
+          value: "china",
+        },
+        {
+          id: 2,
+          label: "美国",
+          arecode: "+116",
+          regex: "[0-9]{13}",
+          value: "us",
+        },
+        {
+          id: 3,
+          label: "英国",
+          arecode: "+113",
+          regex: "[0-9]{13}",
+          value: "uk",
+        },
+        {
+          id: 1,
+          label: "中国大陆",
+          arecode: "+86",
+          regex: "[0-9]{13}",
+          value: "china",
+        },
+        {
+          id: 2,
+          label: "美国",
+          arecode: "+116",
+          regex: "[0-9]{13}",
+          value: "us",
+        },
+        {
+          id: 3,
+          label: "英国",
+          arecode: "+113",
+          regex: "[0-9]{13}",
+          value: "uk",
+        },
+        {
+          id: 1,
+          label: "中国大陆",
+          arecode: "+86",
+          regex: "[0-9]{13}",
+          value: "china",
+        },
+        {
+          id: 2,
+          label: "美国",
+          arecode: "+116",
+          regex: "[0-9]{13}",
+          value: "us",
+        },
+        {
+          id: 3,
+          label: "英国",
+          arecode: "+113",
+          regex: "[0-9]{13}",
+          value: "uk",
+        },
+        {
+          id: 1,
+          label: "中国大陆",
+          arecode: "+86",
+          regex: "[0-9]{13}",
+          value: "china",
+        },
+        {
+          id: 2,
+          label: "美国",
+          arecode: "+116",
+          regex: "[0-9]{13}",
+          value: "us",
+        },
+        {
+          id: 3,
+          label: "英国",
+          arecode: "+113",
+          regex: "[0-9]{13}",
+          value: "uk",
+        },
+        {
+          id: 1,
+          label: "中国大陆",
+          arecode: "+86",
+          regex: "[0-9]{13}",
+          value: "china",
+        },
+        {
+          id: 2,
+          label: "美国",
+          arecode: "+116",
+          regex: "[0-9]{13}",
+          value: "us",
+        },
+        {
+          id: 3,
+          label: "英国",
+          arecode: "+113",
+          regex: "[0-9]{13}",
+          value: "uk",
+        },
       ];
     },
     selectLocationForm() {
@@ -138,15 +247,27 @@ export default {
     selectLocation(e) {
       this.location = e.target.value;
       this.selectLocationForm();
-    }
+    },
+    verification() {
+      this.res = "click";
+      let x = api.user
+        .captcha()
+        .then(() => {
+          this.res = "asdasdasd";
+        })
+        .catch((r) => {
+          this.res = r.message;
+        });
+      console.log(x);
+    },
   },
   computed: {
     selectLocationObj() {
-      return this.getLocation().find(e => e.value === this.location);
+      return this.getLocation().find((e) => e.value === this.location);
     },
     canSubmit() {
       return !this.arecode || !this.phoneNumber;
-    }
+    },
   },
   watch: {
     showSelectLocationForm() {
@@ -160,15 +281,15 @@ export default {
           };
         }
       });
-    }
-  }
+    },
+  },
 };
 </script>
 
 <style scope>
 .banner {
   height: 100px;
-  width: 100%;
+  width: auto;
 }
 .form {
   display: flex;
@@ -185,7 +306,8 @@ export default {
   justify-content: space-between;
 }
 .locationForm {
-  height: 100vh;
+  width: auto;
+  height: 100%;
   margin: 10px;
   background-color: white;
   display: flex;
@@ -259,12 +381,16 @@ export default {
   align-items: center;
   justify-self: start;
 }
+.input .spliter-y {
+  margin-left: 4px;
+}
 .phone .left {
   flex: 2;
 }
 .phone .right {
   flex: 3;
   text-align: end;
+  color: var(--bilibili-color);
 }
 .phone .input {
   flex: 5;
@@ -288,6 +414,7 @@ export default {
   text-align: center;
   color: white;
 }
+<<<<<<< HEAD
 .text-banner {
   color: rgb(146, 148, 150);
   text-align: center;
@@ -297,5 +424,10 @@ export default {
 .text-banner span {
   color: var(--bilibili-color);
   margin-left: -2px;
+=======
+
+.btn-large.disable {
+  background-color: rgba(var(--bilibili-color-value), 0.5);
+>>>>>>> a317a37af76b1e1a737127eadf4c0ad5e7884ef6
 }
 </style>

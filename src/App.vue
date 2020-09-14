@@ -56,8 +56,10 @@ body {
   margin-right: auto;
   position: relative;
   min-width: 300px;
+  overflow: hidden;
 }
 .container {
   height: 100%;
+  width: 100%;
 }
 </style>

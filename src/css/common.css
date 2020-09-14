@@ -51,6 +51,7 @@ img {
   height: 100%;
   width: 100%;
   background-color: rgb(0, 0, 0, 0.3);
+  width: 100vw;
 }
 .selectdisable{
   -webkit-touch-callout: none;
@@ -66,6 +67,11 @@ img {
   height: 1px;
   margin: auto;
 }
+.spliter-y{
+  height: 2em;
+  width: 1px;
+  background-color: rgb(235, 235, 235);
+}
 
 .spliter {
   background-color: rgb(235, 235, 235);
@@ -74,7 +80,4 @@ img {
 }
 .border-b{
   border-bottom: 1px solid rgb(235, 235, 235);
-}
-.disable{
-  opacity: 0.5;
 }
