@@ -65,7 +65,7 @@
         </div>
       </div>
       <div class="btn-large" :class="{disable:canSubmit}">验证登录</div>
-    </form><<<<<<< HEAD
+    </form>
     <div class="text-banner">
       <p>未注册或未绑定哔哩哔哩的手机号，将帮你注册新账号</p>
       <p>
@@ -79,8 +79,8 @@
         遇到问题？
         <span>查看帮助</span>
       </p>
-    </div>=======
-    <div>{{res}}</div>>>>>>>> a317a37af76b1e1a737127eadf4c0ad5e7884ef6
+    </div>
+    <div>{{res}}</div>
   </div>
 </template>
 
@@ -414,7 +414,6 @@ export default {
   text-align: center;
   color: white;
 }
-<<<<<<< HEAD
 .text-banner {
   color: rgb(146, 148, 150);
   text-align: center;
@@ -424,10 +423,8 @@ export default {
 .text-banner span {
   color: var(--bilibili-color);
   margin-left: -2px;
-=======
-
+}
 .btn-large.disable {
   background-color: rgba(var(--bilibili-color-value), 0.5);
->>>>>>> a317a37af76b1e1a737127eadf4c0ad5e7884ef6
 }
 </style>

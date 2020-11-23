@@ -7,7 +7,8 @@
 </template>
 
 <script>
-import Tab from "./Tab";
+import Tab from "./Tab"
+import {path} from "@/constant"
 export default {
   components: { Tab },
   methods: {
@@ -16,27 +17,27 @@ export default {
         {
           imgUrl: require("../../assets/icon/home.svg"),
           name: "主页",
-          router: "/home"
+          router: path.home
         },
         {
           imgUrl: require("../../assets/icon/channel.svg"),
           name: "频道",
-          router: "/home"
+          router: path.channel
         },
         {
           imgUrl: require("../../assets/icon/news.svg"),
           name: "动态",
-          router: "/home"
+          router: path.news
         },
         {
           imgUrl: require("../../assets/icon/shopping.svg"),
           name: "会员购",
-          router: "/home"
+          router: path.vip
         },
         {
           imgUrl: require("../../assets/icon/bilibili-line.svg"),
           name: "我的",
-          router: "/mine"
+          router: path.mine
         }
       ];
     }

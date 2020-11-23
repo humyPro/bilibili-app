@@ -2,7 +2,9 @@
   <div class="head">
     <div class="profile">
       <div class="head-item profile-photo icon-small">
-        <img v-bind:src="getProfilePhoto()" />
+        <router-link to="/mine">
+          <img v-bind:src="getProfilePhoto()" />
+        </router-link>
       </div>
       <div class="head-item search-box">
         <div class="icon-small-x">
