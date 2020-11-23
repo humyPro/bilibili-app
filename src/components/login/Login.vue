@@ -249,16 +249,29 @@ export default {
       this.selectLocationForm();
     },
     verification() {
-      this.res = "click";
-      let x = api.user
+      api.user
         .captcha()
-        .then(() => {
-          this.res = "asdasdasd";
+        .then((res) => {
+          if (res.data && res.data.code === 0 && res.data.data.result) {
+            let data = res.data.data.result;
+            window.initGeetest(
+              {
+                gt: data.gt,
+                challenge: data.challenge,
+                offline: !data.success,
+                new_captcha: true,
+              },
+              (captchaObj) => {
+                captchaObj.appendTo("#res");
+                let a = this.$refs.res.children;
+                console.log(a);
+              }
+            );
+          }
         })
         .catch((r) => {
           this.res = r.message;
         });
-      console.log(x);
     },
   },
   computed: {
